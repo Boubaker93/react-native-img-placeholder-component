@@ -1,7 +1,8 @@
-import React, { Component, useState } from "react";
-import { View, Animated, ImageBackground, ViewPropTypes } from "react-native";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { View, Animated, ImageBackground, ViewPropTypes } from "react-native";
 import styles from "./Styles/ImageWithPlaceholderStyles";
+
 const ImageWithPlaceholder = ({
   placeholder,
   source,
@@ -51,10 +52,14 @@ const ImageWithPlaceholder = ({
 ImageWithPlaceholder.propTypes = {
   style: ViewPropTypes.style,
   children: PropTypes.element,
-  source: PropTypes.shape({}).isRequired,
+  source: PropTypes.oneOfType([
+    PropTypes.shape({}),
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.shape({})),
+  ]).isRequired,
   placeholder: PropTypes.number.isRequired,
   fadeDuration: PropTypes.number,
-  useNativeDriver: PropTypes.string,
+  useNativeDriver: PropTypes.bool,
   resizeMode: PropTypes.oneOf([
     "contain",
     "cover",

@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Boubaker93/react-native-image-with-placeholder/issues"
   },
-  "homepage": "https://github.com/Boubaker93/react-native-image-with-placeholder#readme"
+  "homepage": "https://github.com/Boubaker93/react-native-image-with-placeholder#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  }
 }
