@@ -1,0 +1,28 @@
+{
+  "name": "react-native-image-with-placeholder",
+  "version": "1.0.0",
+  "description": "React native image component with placeholder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boubaker93/react-native-image-with-placeholder.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "image",
+    "placeholder"
+  ],
+  "author": "Boubaker Kalfat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Boubaker93/react-native-image-with-placeholder/issues"
+  },
+  "homepage": "https://github.com/Boubaker93/react-native-image-with-placeholder#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  }
+}
