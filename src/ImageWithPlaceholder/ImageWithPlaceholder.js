@@ -1,65 +1,51 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { View, Animated, ImageBackground, ViewPropTypes } from "react-native";
 import PropTypes from "prop-types";
 import styles from "./Styles/ImageWithPlaceholderStyles";
+const ImageWithPlaceholder = ({
+  placeholder,
+  source,
+  style = undefined,
+  resizeMode = undefined,
+  children = undefined,
+  fadeDuration = 500,
+  useNativeDriver = true,
+}) => {
+  const [thumbnailOpacity] = useState(new Animated.Value(1));
 
-export default class ImageWithPlaceholder extends Component {
-  constructor(props) {
-    super(props);
-    this.onLoadEnd = this.onLoadEnd.bind(this);
-
-    this.state = {
-      thumbnailOpacity: new Animated.Value(1),
-    };
-  }
-
-  onLoadEnd() {
-    const { fadeDuration, source } = this.props;
-    const { thumbnailOpacity } = this.state;
+  const onLoadEnd = () => {
     if (source) {
       Animated.timing(thumbnailOpacity, {
         toValue: 0,
         duration: fadeDuration,
-        useNativeDriver: true,
+        useNativeDriver,
       }).start();
     }
-  }
+  };
 
-  render() {
-    const { style, placeholder, source, resizeMode, children } = this.props;
-    const { thumbnailOpacity } = this.state;
+  return (
+    <View>
+      <ImageBackground
+        style={[styles.image, style]}
+        resizeMode={resizeMode}
+        source={source}
+        onLoadEnd={onLoadEnd}
+      >
+        {children}
+      </ImageBackground>
 
-    return (
-      <View>
-        <ImageBackground
-          style={[styles.image, style]}
-          resizeMode={resizeMode}
-          source={source}
-          onLoadEnd={this.onLoadEnd}
-        >
-          {children}
-        </ImageBackground>
-
-        <Animated.Image
-          resizeMode={resizeMode}
-          style={[
-            {
-              opacity: thumbnailOpacity,
-            },
-            style,
-          ]}
-          source={placeholder}
-        />
-      </View>
-    );
-  }
-}
-
-ImageWithPlaceholder.defaultProps = {
-  fadeDuration: 500,
-  resizeMode: undefined,
-  children: undefined,
-  style: undefined,
+      <Animated.Image
+        resizeMode={resizeMode}
+        style={[
+          {
+            opacity: thumbnailOpacity,
+          },
+          style,
+        ]}
+        source={placeholder}
+      />
+    </View>
+  );
 };
 
 ImageWithPlaceholder.propTypes = {
@@ -68,6 +54,7 @@ ImageWithPlaceholder.propTypes = {
   source: PropTypes.shape({}).isRequired,
   placeholder: PropTypes.number.isRequired,
   fadeDuration: PropTypes.number,
+  useNativeDriver: PropTypes.string,
   resizeMode: PropTypes.oneOf([
     "contain",
     "cover",
@@ -76,3 +63,5 @@ ImageWithPlaceholder.propTypes = {
     "repeat",
   ]),
 };
+
+export default ImageWithPlaceholder;
