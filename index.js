@@ -1,2 +1,2 @@
-import ImageWithPlaceholder from './src/ImageWithPlaceholder/ImageWithPlaceholder';
-export { ImageWithPlaceholder };
+import ImageWithPlaceholder from "./src/ImageWithPlaceholder/ImageWithPlaceholder";
+export default ImageWithPlaceholder;
