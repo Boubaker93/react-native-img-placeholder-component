@@ -63,7 +63,7 @@ import ImageWithPlaceholder from 'react-native-image-with-placeholder';
 | style            | -     | ✕ | Image and placeholder styles                                                        |
 | fadeDuration     |500    | ✕ | The fade duration of the placeholder once the source loads                          |
 | resizeMode       | -     | ✕ | [Image](https://facebook.github.io/react-native/docs/images.html) `resizeMode` prop |
-| useNativeDriver  | false | ✕ | either to use NativeDriver for animation or no |
+| useNativeDriver  | false | ✕ | Uses the native driver when true. Default false. |
 
 ## License
 
