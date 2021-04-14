@@ -1,4 +1,4 @@
-# react-native-image-with-placeholder
+# react-native-img-placeholder-component
 
 A React native image component with placeholder
 
@@ -9,13 +9,13 @@ Feel free to add an issue if you have any trouble!
 using npm
 
 ```bash
-npm i --save react-native-image-placeholder
+npm i --save react-native-img-placeholder-component
 ```
 
 using yarn
 
 ```bash
-yarn add react-native-image-placeholder
+yarn add react-native-img-placeholder-component
 ```
 
 ## Usage
