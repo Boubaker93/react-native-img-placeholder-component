@@ -23,7 +23,7 @@ yarn add react-native-img-placeholder-component
 Simple example
 
 ```jsx
-import ImageWithPlaceholder from 'react-native-image-with-placeholder';
+import ImageWithPlaceholder from 'react-native-img-placeholder-component';
 ....
 <ImageWithPlaceholder
     useNativeDriver
@@ -38,7 +38,7 @@ import ImageWithPlaceholder from 'react-native-image-with-placeholder';
 Example with child
 
 ```jsx
-import ImageWithPlaceholder from 'react-native-image-with-placeholder';
+import ImageWithPlaceholder from 'react-native-img-placeholder-component';
 ....
 <ImageWithPlaceholder
     useNativeDriver
