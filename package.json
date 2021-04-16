@@ -1,6 +1,6 @@
 {
   "name": "react-native-img-placeholder-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React native image component with placeholder",
   "main": "index.js",
   "scripts": {
